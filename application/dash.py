@@ -378,10 +378,10 @@ junto15_21['Totfem1521']=junto15_21[['Total2015', 'Total2016', 'Total2017', 'Tot
 junto15_21['Totpob1521']=junto15_21[['POB15', 'POB16', 'POB17', 'POB18','POB19', 'POB20', 'POB21']].sum(1)
 junto15_21['Tasa1521']=((junto15_21.Totfem1521/junto15_21.Totpob1521)*100000).round(2)
 
+
+
+######################################################### Grafica tasa POR ENTIDAD
 TasasFem15_21index=junto15_21[['Entidad','Totfem1521','Totpob1521','Tasa1521']].sort_values('Tasa1521',ascending=False)
-
-
-######################################################### Grafica Totales
 
 graf_tasafem = go.Figure()
 graf_tasafem.add_trace(go.Bar(x=TasasFem15_21index['Entidad'],y=TasasFem15_21index['Tasa1521'],
@@ -396,7 +396,7 @@ graf_tasafem.update_layout(
     #title='Tasa feminicidio periodo 2015-2020',
     xaxis_tickfont_size= 12,
     yaxis=dict(
-        title='Tasa cada 100 000 habitantes',
+        title='Totales acumulados por entidad',
         titlefont_size=14,
         tickfont_size=12,
         titlefont_family= "Monserrat"),
@@ -406,7 +406,7 @@ graf_tasafem.update_layout(
     )
 
 
-######################################################### Grafica Total
+######################################################### Grafica de Totales por entidad 
 
 TasasTot15_21index=junto15_21[['Entidad','Totfem1521','Totpob1521','Tasa1521']].sort_values('Totfem1521',ascending=False)
 
@@ -433,13 +433,7 @@ graf_totfem.update_layout(
     )
 
 
-######################################################### MAPAS 3estados con más feminicidios
 
-#concat2 = fem_filter1[fem_filter1.Entidad == "Veracruz de Ignacio de la Llave"]
-#concat.plot("NOM_ENT", cmap= "Oranges", legend=True, k=5)
-#plt.axis("off")
-#plt.savefig("ver.png", dpi= 120)
-#plt.show()
 
 
 ####################################
@@ -450,7 +444,7 @@ graf_totfem.update_layout(
 
 ########### Define your variables
 mytitle=' '
-tabtitle='Feminicidios'
+tabtitle='Violencia familiar'
 sourceurl='https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva?state=published'
 
 
@@ -511,12 +505,13 @@ body = html.Div([
 #Cintillo 1
     dbc.Row(
            [
-               dbc.Col(html.H1(conf_2015)),
-               dbc.Col(html.H1(conf_2016)),
-               dbc.Col(html.H1(conf_2017)),
-               dbc.Col(html.H1(conf_2018)),
-               dbc.Col(html.H1(conf_2019)),
-               dbc.Col(html.H1(conf_2020)),
+               dbc.Col(html.H1([str(f"{conf_2015:,}")])),
+                   #conf_2015)),
+               dbc.Col(html.H1([str(f"{conf_2016:,}")])),
+               dbc.Col(html.H1([str(f"{conf_2017:,}")])),
+               dbc.Col(html.H1([str(f"{conf_2018:,}")])),
+               dbc.Col(html.H1([str(f"{conf_2019:,}")])),
+               dbc.Col(html.H1([str(f"{conf_2020:,}")])),
             ],justify= "start"),
     
 # Cintillo 1.1
@@ -527,7 +522,7 @@ body = html.Div([
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2018.jpeg?raw=true")),
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2019.jpeg?raw=true")),
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2020.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2021.jpeg?raw=true")),
+               #dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2021.jpeg?raw=true")),
           
         ]),
 # Cintillo párrafos
@@ -536,10 +531,7 @@ body = html.Div([
       dbc.Row([
                dbc.Col(dbc.Container([
                        html.P(
-                           "En 10 entidades se registraron  71.56 % de violencia familiar (91181) en 2015 : "
-                           " Nuevo León  (17062),  Ciudad de México  (16103),  Chihuahua  (12273),  Guanajuato "
-                           " (10298),  Baja California  (8892),  Jalisco  (8543),  Puebla  (5024),  México  (4722), "
-                           " Tabasco  (4230),  y  Morelos  (4034).",
+                           "En 2015 en 10 entidades se registró  71.56 % de la violencia familiar (91,181 delitos) :  Nuevo León  (17,062),  Ciudad de México  (16,103),  Chihuahua  (12,273),  Guanajuato  (10,298),  Baja California  (8,892),  Jalisco  (8,543),  Puebla  (5,024),  México  (4,722),  Tabasco  (4,230),  y  Morelos  (4,034).",
                     className="top",)
                                 ], fluid=True)
                        
@@ -547,10 +539,7 @@ body = html.Div([
           dbc.Col(dbc.Jumbotron([
                    dbc.Container([
                        html.P(
-                           "En 10 entidades se registraron  67.16 % de violencia familiar (103361) en 2016 : "
-                           " Ciudad de México  (18426),  Nuevo León  (17773),  Chihuahua  (11960),  Jalisco  (11431), "
-                           " Guanajuato  (11133),  Baja California  (8315),  Coahuila de Zaragoza  (6885),  Tamaulipas "
-                           " (6378),  Puebla  (5586),  y  México  (5474).",
+                           "En 2016 en 10 entidades se registró  67.16 % de la violencia familiar (103,361 delitos) :  Ciudad de México  (18,426),  Nuevo León  (17,773),  Chihuahua  (11,960),  Jalisco  (11,431),  Guanajuato  (11,133),  Baja California  (8,315),  Coahuila de Zaragoza  (6,885),  Tamaulipas  (6,378),  Puebla  (5,586),  y  México  (5,474).",
                     className="top")
                                 ], fluid=True)
                                     ], fluid=True)
@@ -558,10 +547,7 @@ body = html.Div([
           dbc.Col(
                    dbc.Container([
                        html.P(
-                           "En 10 entidades se registraron  62.45 % de violencia familiar (105906) en 2017 :"
-                           " Ciudad de México  (18360),  Nuevo León  (17145),  Chihuahua  (11583),  Guanajuato  "
-                           "(11253),  Jalisco  (9557),  Coahuila de Zaragoza  (8968),  Baja California  (8554), "
-                           " Tamaulipas  (7030),  México  (6860),  y  Tabasco  (6596).",
+                           "En 2017 en 10 entidades se registró  62.45 % de la violencia familiar (105,906 delitos) :  Ciudad de México  (18,360),  Nuevo León  (17,145),  Chihuahua  (11,583),  Guanajuato  (11,253),  Jalisco  (9,557),  Coahuila de Zaragoza  (8,968),  Baja California  (8,554),  Tamaulipas  (7,030),  México  (6,860),  y  Tabasco  (6,596).",
                     className="top")
                                 ], fluid=True)
                                     )
@@ -569,47 +555,27 @@ body = html.Div([
           dbc.Col(dbc.Jumbotron([
                    dbc.Container([
                        html.P(
-                           "En 10 entidades se registraron  59.54 % de violencia familiar (107290) en 2018 : "
-                           " Ciudad de México  (19931),  Nuevo León  (16410),  Chihuahua  (11227),  Guanajuato "
-                           " (10356),  Baja California  (9904),  Coahuila de Zaragoza  (9791),  Jalisco  (8850),"
-                           "  Puebla  (7296),  Tamaulipas  (7029),  y  México  (6496).",
+                           "En 2018 en 10 entidades se registró  59.54 % de la violencia familiar (107,290 delitos) :  Ciudad de México  (19,931),  Nuevo León  (16,410),  Chihuahua  (11,227),  Guanajuato  (10,356),  Baja California  (9,904),  Coahuila de Zaragoza  (9,791),  Jalisco  (8,850),  Puebla  (7,296),  Tamaulipas  (7,029),  y  México  (6,496).",
                     className="top")
                                 ], fluid=True)
                                     ], fluid=True)
                       ),
           dbc.Col(dbc.Container([
                        html.P(
-                           "En 10 entidades se registraron  59.48 % de violencia familiar (125029) en 2019 :"
-                           "  Ciudad de México  (25775),  Nuevo León  (16339),  Guanajuato  (11142),  Jalisco "
-                           " (11053),  Chihuahua  (10968),  Coahuila de Zaragoza  (10647),  Baja California  (10455),"
-                           "  Veracruz de Ignacio de la Llave  (10324),  México  (9249),  y  Puebla  (9077).",
+                           "En 2019 en 10 entidades se registró  59.48 % de la violencia familiar (125,029 delitos) :  Ciudad de México  (25,775),  Nuevo León  (16,339),  Guanajuato  (11,142),  Jalisco  (11,053),  Chihuahua  (10,968),  Coahuila de Zaragoza  (10,647),  Baja California  (10,455),  Veracruz de Ignacio de la Llave  (10,324),  México  (9,249),  y  Puebla  (9,077).",
                     className="top")
                                 ], fluid=True)
                       ),
           dbc.Col(dbc.Jumbotron([
                    dbc.Container([
                        html.P(
-                          "En 10 entidades se registraron  61.55 % de violencia familiar (135425) en 2020 : "
-                           " Ciudad de México  (27769),  Nuevo León  (17940),  México  (16915),  Jalisco  (11890), "
-                           " Chihuahua  (11293),  Baja California  (10781),  Veracruz de Ignacio de la Llave  (10386), "
-                           " Guanajuato  (10035),  Coahuila de Zaragoza  (9291),  y  Puebla  (9125).",
+                          "En 2020 en 10 entidades se registró  61.55 % de la violencia familiar (135,425 delitos) :  Ciudad de México  (27,769),  Nuevo León  (17,940),  México  (16,915),  Jalisco  (11,890),  Chihuahua  (11,293),  Baja California  (10,781),  Veracruz de Ignacio de la Llave  (10,386),  Guanajuato  (10,035),  Coahuila de Zaragoza  (9,291),  y  Puebla  (9,125).",
                     className="top")
                                 ], fluid=True)
                                     ], fluid=True),
                   
                       ),
-          dbc.Col(dbc.Jumbotron([
-                   dbc.Container([
-                       html.P(
-                          "En 10 entidades se registraron  61.71 % de violencia familiar (21976) en 2021 : "
-                           " Ciudad de México  (4891),  México  (3579),  Nuevo León  (2515),  Jalisco  (1802), "
-                           " Chihuahua  (1691),  Baja California  (1647),  Veracruz de Ignacio de la Llave  (1616), "
-                           " Coahuila de Zaragoza  (1503),  Guanajuato  (1462),  y  Sonora  (1270).",
-                    className="top")
-                                ], fluid=True)
-                                    ], fluid=True),
-                  
-                      ),
+ 
       ]),
                 
     
@@ -659,17 +625,17 @@ body = html.Div([
                        lg={'size': 1,  "offset": 1, }
                       ),
                
-               dbc.Col(html.H3("Nuevo León"),
+               dbc.Col(html.H3("México"),
                         #width=1, 
                        lg={'size': 1,  "offset": 1, }
                       ),
                
-               dbc.Col(html.H3("Chihuahua "),
+               dbc.Col(html.H3("Nuevo León "),
                        # width=1, 
                        lg={'size': 3,  "offset": 2, }
                       ),
                       
-               dbc.Col(html.H3("Guanajuato "),
+               dbc.Col(html.H3("Jalisco "),
                        # width=1, 
                        lg={'size': 1,  "offset": 1, }
                       ),
@@ -681,13 +647,13 @@ body = html.Div([
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx.jpeg?raw=true"),
                       #width=4,lg={'size': 3,  "offset": 3, }
                       ),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mx1.jpg?raw=true"),
+                      #width=4,lg={'size': 3,  "offset": 3, }
+                      ),
                dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon.jpeg?raw=true"),
                       #width=4,lg={'size': 3,  "offset": 3, }
                       ),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
-                      #width=4,lg={'size': 3,  "offset": 3, }
-                      ),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/guanj.jpeg?raw=true"),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/jal.jpeg?raw=true"),
                       #width=4,lg={'size': 3,  "offset": 3, }
                       ),
            ], no_gutters=True),
@@ -701,11 +667,7 @@ body = html.Div([
     dbc.Row([
                dbc.Col(dbc.Container([
                        html.P(
-                          "Los 10 Municipios con mayor número de casos son:"
-                           " Iztapalapa (24331), Gustavo A. Madero (15405), Cuauhtémoc (10556), "
-                           "Álvaro Obregón (10006), Tlalpan (9403), Coyoacán (8537), Iztacalco "
-                           "(8115), Venustiano Carranza (7423), Xochimilco (6696), y Azcapotzalco "
-                           "(6457).",
+                          "Las 10 alcaldías con más violencia familiar fueron: Iztapalapa (24,331), Gustavo A. Madero (15,405), Cuauhtémoc (10,556), Álvaro Obregón (10,006), Tlalpan (9,403), Coyoacán (8,537), Iztacalco (8,115), Venustiano Carranza (7,423), Xochimilco (6,696), y Azcapotzalco (6,457).",
  
                     className="top",)
                                 ], fluid=True)
@@ -714,22 +676,16 @@ body = html.Div([
           dbc.Col(dbc.Jumbotron([
                    dbc.Container([
                        html.P(
-                           "Los 10 Municipios con mayor número de casos "
-                           "son: Monterrey (20079), Guadalupe (11511), Apodaca (10997), Juárez "
-                           "(10074), García (9976), San Nicolás de los Garza (5758), Santa Catarina"
-                           "(5543), Cadereyta Jiménez (3127), Pesquería (3029), y Salinas Victoria "
-                           "(1633).",
+                           "Los 10 municipios con más violencia familiar fueron: Ecatepec de Morelos (5,828), Toluca (3,926), Nezahualcóyotl (3,353), Naucalpan de Juárez (3,304), Cuautitlán Izcalli (2,310), Tlalnepantla de Baz (1,964), Atizapán de Zaragoza (1,936), Chalco (1,853), Tultitlán (1,835), y Tecámac (1,664).",
                     className="top")
                                 ], fluid=True)
                                     ], fluid=True)
                       ),
-          dbc.Col(
+
+       dbc.Col(
                    dbc.Container([
                        html.P(
-                           "Los 10 Municipios con mayor número de casos son: Juárez (37160), "
-                           "Chihuahua (20264), Delicias (3223), Hidalgo del Parral (2906), "
-                           "Cuauhtémoc (2222), Nuevo Casas Grandes (918), Camargo (627), Aldama "
-                           "(412), Meoqui (403), y Bocoyna (350).",
+                           "Los 10 municipios con más violencia familiar fueron: Monterrey (20,079), Guadalupe (11,511), Apodaca (10,997), Juárez (10,074), García (9,976), San Nicolás de los Garza (5,758), Santa Catarina (5,543), Cadereyta Jiménez (3,127), Pesquería (3,029), y Salinas Victoria (1,633).",
                     className="top")
                                 ], fluid=True)
                                     )
@@ -737,11 +693,7 @@ body = html.Div([
           dbc.Col(dbc.Jumbotron([
                    dbc.Container([
                        html.P(
-                          "Los 10 Municipios con mayor número de casos son: León (15554),"
-                           " Irapuato (11182), Celaya (10476), Guanajuato (4359), Salamanca "
-                           "(3302), San Miguel de Allende (2418), Salvatierra (1213), Dolores"
-                           "Hidalgo Cuna de la Independencia Nacional (1207), Cortazar (1019), "
-                           "y Apaseo el Grande (986).",
+                          "Los 10 municipios con más violencia familiar fueron: Guadalajara (14,481), Zapopan (11,968), Tlajomulco de Zúñiga (6,400), Tonalá (5,527), Puerto Vallarta (3,333), El Salto (1,779), Tepatitlán de Morelos (964), Lagos de Moreno (889), Autlán de Navarro (759), y Ameca (660).",
                     className="top")
                                 ], fluid=True)
                                     ], fluid=True)
