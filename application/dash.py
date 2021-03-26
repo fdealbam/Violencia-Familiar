@@ -147,6 +147,12 @@ femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21'#, 'Marzo21', 'Abril21'
 
 
 #identificadores
+
+femi15_21[["Total2015","Total2016","Total2017","Total2018","Total2019","Total2020",
+           "Total2021",]]  =  femi15_21[["Total2015","Total2016","Total2017","Total2018",
+                                         "Total2019","Total2020","Total2021",]].astype(int)
+
+
 conf_2015= femi15_21.Total2015.sum()
 conf_2016= femi15_21.Total2016.sum()
 conf_2017= femi15_21.Total2017.sum()
