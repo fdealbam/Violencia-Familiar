@@ -147,19 +147,13 @@ femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21'#, 'Marzo21', 'Abril21'
 
 
 #identificadores
-
-femi15_21[["Total2015","Total2016","Total2017","Total2018","Total2019","Total2020",
-           "Total2021",]]  =  femi15_21[["Total2015","Total2016","Total2017","Total2018",
-                                         "Total2019","Total2020","Total2021",]].astype(int)
-
-
-conf_2015= femi15_21.Total2015.sum()
-conf_2016= femi15_21.Total2016.sum()
-conf_2017= femi15_21.Total2017.sum()
-conf_2018= femi15_21.Total2018.sum()
-conf_2019= femi15_21.Total2019.sum()
-conf_2020= femi15_21.Total2020.sum()
-conf_2021= femi15_21.Total2021.sum()
+conf_2015= femi15_21.Total2015.sum().astype(int)
+conf_2016= femi15_21.Total2016.sum().astype(int)
+conf_2017= femi15_21.Total2017.sum().astype(int)
+conf_2018= femi15_21.Total2018.sum().astype(int)
+conf_2019= femi15_21.Total2019.sum().astype(int)
+conf_2020= femi15_21.Total2020.sum().astype(int)
+conf_2021= femi15_21.Total2021.sum().astype(int)
 
 
 
@@ -511,13 +505,13 @@ body = html.Div([
 #Cintillo 1
     dbc.Row(
            [
-               dbc.Col(html.H1([str(f"{conf_2015:,}")])),
-                   #conf_2015)),
-               dbc.Col(html.H1([str(f"{conf_2016:,}")])),
-               dbc.Col(html.H1([str(f"{conf_2017:,}")])),
-               dbc.Col(html.H1([str(f"{conf_2018:,}")])),
-               dbc.Col(html.H1([str(f"{conf_2019:,}")])),
-               dbc.Col(html.H1([str(f"{conf_2020:,}")])),
+               dbc.Col(html.H1([str(f"{conf_2015:,d}")])),
+                   #conf_2015)),d
+               dbc.Col(html.H1([str(f"{conf_2016:,d}")])),
+               dbc.Col(html.H1([str(f"{conf_2017:,d}")])),
+               dbc.Col(html.H1([str(f"{conf_2018:,d}")])),
+               dbc.Col(html.H1([str(f"{conf_2019:,d}")])),
+               dbc.Col(html.H1([str(f"{conf_2020:,d}")])),
             ],justify= "start"),
     
 # Cintillo 1.1
@@ -706,110 +700,14 @@ body = html.Div([
                       ),
       ]),
 
-############################################  MUNICIPIOS ranking (OPCION  2)
- #  dbc.Row([
- #             dbc.Col(dbc.Container([
- #                     html.P(
- #                         "Ecatepec de Morelos (56)"
- #                         "Chimalhuacán (35)"
- #                         "Nezahualcóyotl (31)"
- #                         "Toluca (27)"
- #                         "Naucalpan de Juárez (22)"
- #                         "Ixtapaluca (22)"
- #                         "Zumpango (21)"
- #                         "Tecámac (19)"
- #                         "Cuautitlán Izcalli (19)"
- #                         "Valle de Chalco Solidaridad (16)",
- #                  className="top",)
- #                              ],)
- #                     
- #                    ),
- #        dbc.Col(dbc.Jumbotron([
- #                 dbc.Container([
- #                     html.P(
- #                         "Veracruz (49)"
- #                         "Xalapa (42)"
- #                         "Coatzacoalcos (25)"
- #                         "Córdoba (24)"
- #                         "Poza Rica de Hidalgo (17)"
- #                         "Tuxpan (13)"
- #                         "Papantla (12)"
- #                         "Tierra Blanca (11)"
- #                         "Minatitlán (11)"
- #                         "San Andrés Tuxtla (11)",
- #                  className="top")
- #                              ], )
- #                                  ], )
- #                    ),
- #        dbc.Col(
- #                 dbc.Container([
- #                     html.P(
- #                         "Iztapalapa (68)"
- #                         "Gustavo A. Madero (37)"
- #                         "Tlalpan (35)"
- #                         "Cuauhtémoc (34)"
- #                         "Xochimilco (25)"
- #                         "Miguel Hidalgo (19)"
- #                         "Álvaro Obregón (17)"
- #                         "Tláhuac (16)"
- #                         "Coyoacán (14)"
- #                         "Venustiano Carranza (14)",
- #                  className="top")
- #                              ],)
- #                                  )
- #                    ,
- #        dbc.Col(dbc.Jumbotron([
- #                 dbc.Container([
- #                     html.P(
- #                         "Guadalajara (51)"
- #                         "Tlajomulco de Zúñiga (38)"
- #                         "Zapopan (34)"
- #                         "El Salto (24)"
- #                         "Tonalá (17)"
- #                         "Puerto Vallarta (10)"
- #                         "Ocotlán (6)"
- #                         "Tequila (6)"
- #                         "Mezquitic (6)"
- #                         "Ixtlahuacán de los Membrillos (6)",
- #                  className="top")
- #                              ], )
- #                                  ], )
- #                    ),
- #    ]),
- #  
-#       html.Hr(),
-#       html.Hr(),
-#       html.Hr(),
-#       html.Hr(),
-#       html.Hr(),
-#       html.Hr(),
+
 #    
     
     dbc.Row([
                
            ]),
    
-    
-# Cintillo 3
-    
-# tablas 3-4    
-#    dbc.Row([
-#               dbc.Col(dbc.Table.from_dataframe(patabla3a,
-#                        bordered="success", size=422, striped=True), 
-#                        width=4, lg={'size': 3,  "offset": 2, }),
-#        
-#               dbc.Col(dbc.Table.from_dataframe(patabla4a,
-#                        bordered="success", size=422, striped=True), 
-#                        width=4, lg={'size': 3,  "offset": 3, }),
-#            ], justify="center", no_gutters=False),
-##
- #      html.Hr(),
- #      html.Hr(),
- #      html.Hr(),
- #      html.Hr(),
- #      html.Hr(),
- #      html.Hr(),
- #      html.Hr(),
+
        html.Hr(),
        html.Hr(),
        html.Hr(),
@@ -853,48 +751,6 @@ body = html.Div([
        html.Hr(),
     
 
-# nuevo
-    
-  # #dbc.Jumbotron(
-   #[
-   #    dbc.Container(
-   #        [
-   #            html.H4("Consideraciones generales "),
-   #            html.P(
-   #                "Los feminicidios son un problema aún irresuelto y son tema central de la " 
-   #                "agenda de seguridad nacional. Su gravedad se observa "
-   #                "en los registros anuales y registros mensuales, que se presentan al "
-   #                "inicio de esta visualización."
-   #                "Existe mayor atención institucional al fenómeno y fuerte preocupación de la sociedad, " 
-   #                "lo que se evidencia en el hecho que todos seamos más vigilantes al respecto. "
-   #                "No obstante, aún hace falta más acción social, sobretodo, más intervención institucional "
-   #                "para diseñar estrategias efectivas de prevención y promover su denuncia. Es imperante "
-   #                "acabar con esta violencia de género. "
-   #                "El presente dashboard (tablero de datos) es un ejercicio institucional con el objeto de "
-   #                "informar a la sociedad. La información proviene del Secretariado Ejecutivo Nacional del Sistema Nacional de "
-   #                "Seguridad Pública (SENSNSP). El lector debe ser advertido que el período cubierto "
-   #                "es del mes de enero de 2015 hasta el mes de enero del 2021. "
-   #                "Ademas, esta dashboard seguramente puede ser completado con otras fuentes de información "
-   #                "gubernamental y por toda aquella información proveniente de organizaciones civiles que " 
-   #                "dan seguimiento al tema. En ningún caso, este contenido representa algún "
-   #                "posicionamiento partidista, personal o institucional, mucho menos opinión o postura alguna "
-   #                "sobre el fenómeno. ",
-   #                className="lead"),
-   #            html.Hr(),
-   #            html.H5("Metodología "),
-   #            html.P(
-   #                "Esta información fue tratada con el lenguaje de programación Python y varias de las librerías "
-   #                "más comunes (Dash, Choropleth, Pandas, Numpy, Geopandas, etc.), que nos ayudan a automatizar "
-   #                "la recurrencia (request) a la fuente de información y las operaciones necesarias para creargraficas "
-   #                "interactivas y mapas presentados. ",
-   #                className="lead"),
-   #                
-   #        ], fluid=True,
-   #    )
-   #],
-   #fluid=True,
-   #),    
-    
         
     
     
