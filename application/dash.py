@@ -746,21 +746,11 @@ body = html.Div([
             dbc.Col(dcc.Graph(figure= graf_tasafem, config= "autosize")),
                    #lg={'size': 5,  "offset": 1,}),
         ], justify="end", no_gutters=True,),
-
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-    
-
-        
-    
-    
-    
-
-    dbc.Row([
+  html.Br(),
+  html.Br(),
+  html.Br(),
+  
+  dbc.Row([
                                     #https://github.com/fdealbam/CamaraDiputados/blob/b11ef31e8e0f73e1a4a06ce60402563e1bd0122e/application/static/logocamara.jfif
            dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true"),
                         width=4, lg={'size': 1,  "offset": 3, }),
@@ -770,6 +760,24 @@ body = html.Div([
                            " México, 2021 "),
                   width={'size': 3, 'offset': 0}),
                ], justify="start",),
+   
+  html.Br(),
+  html.Br(),
+  html.Br(),
+    
+   
+    html.Div([
+        html.H5([dbc.Badge("Equipo que desarrolló", 
+                          href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Autores.pdf",
+                          color="light",
+                          className="ml-1")]),
+        html.H5([dbc.Badge("Consultores", 
+                          href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Consultores.pdf",
+                          color="light",
+                          className="ml-1")]),
+    ],style={'textAlign': 'center',},),
+    
+    html.Br(),
         
             ])
 
