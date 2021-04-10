@@ -760,25 +760,21 @@ body = html.Div([
                            " México, 2021 "),
                   width={'size': 3, 'offset': 0}),
                ], justify="start",),
-   
-  html.Br(),
-  html.Br(),
-  html.Br(),
-    
-   
-    html.Div([
-        html.H5([dbc.Badge("Equipo que desarrolló", 
+    dbc.Row([    
+           dbc.Col(html.H5([dbc.Badge("Equipo responsable", 
                           href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Autores.pdf",
-                          color="light",
-                          className="ml-1")]),
-        html.H5([dbc.Badge("Consultores", 
-                          href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Consultores.pdf",
-                          color="light",
-                          className="ml-1")]),
-    ],style={'textAlign': 'center',},),
-    
+                          #color="light",
+                          #className="ml-1")
+                                     )]),
+                  width={'size': 3,  "offset": 4}),
+                       ], justify="start",),    
     html.Br(),
-        
+   
+  html.Br(),
+  html.Br(),
+  html.Br(),
+    
+    
             ])
 
 
