@@ -1,4 +1,6 @@
 
+
+
 import dash
 import matplotlib.pyplot as plt 
 import dash_bootstrap_components as dbc
@@ -472,12 +474,12 @@ body = html.Div([
                         width={'size': 3,  "offset":1 }),
             ]),
 
-     html.Hr(),
-     html.Hr(),
-     html.Hr(),
-     html.Hr(),
-     html.Hr(),
-     html.Hr(),
+     html.Br(),
+     html.Br(),
+     html.Br(),
+     html.Br(),
+     html.Br(),
+     html.Br(),
 #cintillo 0
     
      dbc.Row(
@@ -487,9 +489,9 @@ body = html.Div([
                         width={'size': 8,  "offset":1 }),
             ]),
 
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
     
      dbc.Row(
            [
@@ -525,14 +527,14 @@ body = html.Div([
           
         ]),
 # Cintillo párrafos
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
 #      dbc.Row([
 #               dbc.Col(dbc.Container([
 #                       html.P(
@@ -601,14 +603,14 @@ body = html.Div([
         ]),
 
       
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
     
 ##Cintillo mapas y ranking
 
@@ -621,9 +623,9 @@ body = html.Div([
                         width={'size': 10,  "offset":1 }),
             ]),
 
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
     
      dbc.Row(
            [
@@ -707,14 +709,14 @@ body = html.Div([
                
            ]),
    
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
        
 #---------Grafica por entidad
      dbc.Row(
@@ -724,9 +726,9 @@ body = html.Div([
                        width={'size': 10,  "offset":1 }),
             ]),
 
-       html.Hr(),
-       html.Hr(),
-       html.Hr(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
     
     dbc.Row(
            [
@@ -768,8 +770,7 @@ body = html.Div([
                                      )]),
                   width={'size': 3,  "offset": 4}),
                        ], justify="start",),    
-    html.Br(),
-   
+  html.Br(),
   html.Br(),
   html.Br(),
   html.Br(),
