@@ -517,13 +517,13 @@ body = html.Div([
     
 # Cintillo 1.1
         dbc.Row([
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2015.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2016.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2017.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2018.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2019.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2020.jpeg?raw=true")),
-               #dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mapa2021.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2015.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2016.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2017.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2018.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2019.jpeg?raw=true")),
+               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2020.jpeg?raw=true")),
+               #dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20violfam%20Total2021.jpeg?raw=true")),
           
         ]),
 # Cintillo párrafos
