@@ -640,8 +640,8 @@ for e in year_list:
     #os.chdir(r'C:\Users\IVANOV\AnacondaProjects\0 0 Projects\dash_fem\resultados') #_____________________Ruta Wi
     #os.chdir(r'C:\Users\win\AnacondaProjects\0 0 Projects\Project_11\bases')      #_____________________Ruta Ae
 
-    plt.savefig("Mapa violenciafamiliar %s.jpeg" %(e), dpi= 120)
-    print("Guardado violenciafamiliar %s" %(e))
+    plt.savefig("Mapa Violenciafamiliar %s.jpeg" %(e), dpi= 120)
+    print("Guardado Violenciafamiliar %s" %(e))
     plt.show()
 
 
