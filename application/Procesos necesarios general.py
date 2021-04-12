@@ -37,11 +37,11 @@ columns = ['Año', 'Clave_Ent', 'Entidad', 'Cve. Municipio', 'Municipio',
 delitos = pd.read_csv("Municipal-Delitos-2015-2021_feb2021.csv", encoding= "Latin-1", 
                       usecols= columns)
 
-mpios_viol = delitos[delitos["Tipo de delito"] =='Abuso sexual']#|
+mpios_viol = delitos[delitos["Tipo de delito"] =='Violencia familiar']#|
                      #(delitos["Tipo de delito"] =='Violación equiparada')]
                      
                      
-mpios_viol.to_csv('Abusosexual20152021.csv')#, header=True)
+mpios_viol.to_csv('ViolenciaFamiliar20152021.csv')#, header=True)
 
 
 #print("Se creo el archivo ahora hay que subirlo al GITHUB")
@@ -50,7 +50,7 @@ mpios_viol.to_csv('Abusosexual20152021.csv')#, header=True)
 # In[26]:
 
 
-tos= pd.read_csv('Abusosexual20152021.csv')#, header=True)
+tos= pd.read_csv('ViolenciaFamiliar20152021.csv')#, header=True)
 tos.head()
 
 
@@ -66,7 +66,7 @@ tos.head()
 #########################################
 
 
-delitos = pd.read_csv(r"https://raw.githubusercontent.com/fdealbam/abusosexual/main/Abusosexual20152021.csv")
+delitos = pd.read_csv(r"https://raw.githubusercontent.com/fdealbam/abusosexual/main/ViolenciaFamiliar20152021.csv")
 delitos.drop('Unnamed: 0',1, inplace=True)
 
 delitos.groupby(['Año','Entidad',])['Enero', 
@@ -235,8 +235,8 @@ for e in year_list:
     #os.chdir(r'C:\Users\IVANOV\AnacondaProjects\0 0 Projects\dash_fem\resultados') #_____________________Ruta Wi
     #os.chdir(r'C:\Users\win\AnacondaProjects\0 0 Projects\Project_11\bases')      #_____________________Ruta Ae
 
-    plt.savefig("Mapa abusosexual %s.jpeg" %(e), dpi= 120)
-    print("Guardado abusosexual %s" %(e))
+    plt.savefig("Mapa violenciafamiliar %s.jpeg" %(e), dpi= 120)
+    print("Guardado violenciafamiliar %s" %(e))
     plt.show()
 
 
@@ -275,7 +275,7 @@ for e in year_list:
 # In[5]:
 
 
-delitos = pd.read_csv("https://github.com/fdealbam/Violacion/blob/main/Violacion2015_2021.csv?raw=true")
+delitos = pd.read_csv("https://github.com/fdealbam/Violacion/blob/main/ViolenciaFamiliar2015_2021.csv?raw=true")
 delitos.drop('Unnamed: 0',1, inplace=True)
 
 
@@ -437,8 +437,8 @@ for e in year_list:
     os.chdir(r'C:\Users\IVANOV\AnacondaProjects\0 0 Projects\dash_fem\resultados') #_____________________Ruta Wi
     #os.chdir(r'C:\Users\win\AnacondaProjects\0 0 Projects\Project_11\bases')      #_____________________Ruta Ae
 
-    plt.savefig("Mapa violacion %s.jpeg" %(e), dpi= 120)
-    print("Guardado violacion %s" %(e))
+    plt.savefig("Mapa violenciafamiliar %s.jpeg" %(e), dpi= 120)
+    print("Guardado violenciafamiliar %s" %(e))
     plt.show()
 
 
@@ -640,8 +640,8 @@ for e in year_list:
     #os.chdir(r'C:\Users\IVANOV\AnacondaProjects\0 0 Projects\dash_fem\resultados') #_____________________Ruta Wi
     #os.chdir(r'C:\Users\win\AnacondaProjects\0 0 Projects\Project_11\bases')      #_____________________Ruta Ae
 
-    plt.savefig("Mapa violfam %s.jpeg" %(e), dpi= 120)
-    print("Guardado violfam %s" %(e))
+    plt.savefig("Mapa violenciafamiliar %s.jpeg" %(e), dpi= 120)
+    print("Guardado violenciafamiliar %s" %(e))
     plt.show()
 
 
