@@ -117,7 +117,7 @@ femi15_21 = ff[[
  'Enero20','Febrero20','Marzo20','Abril20','Mayo20','Junio20','Julio20',
  'Agosto20','Septiembre20','Octubre20','Noviembre20','Diciembre20',
     
- 'Enero21','Febrero21'#,'Marzo21','Abril21','Mayo21','Junio21','Julio21',
+ 'Enero21','Febrero21','Marzo21',#'Abril21','Mayo21','Junio21','Julio21',
 # 'Agosto21','Septiembre21','Octubre21','Noviembre21','Diciembre21'
              ]]
 
@@ -143,7 +143,7 @@ femi15_21['Total2020']= femi15_21[[ 'Enero20', 'Febrero20', 'Marzo20', 'Abril20'
                                'Junio20', 'Julio20', 'Agosto20', 'Septiembre20', 'Octubre20',
                                'Noviembre20', 'Diciembre20',]].sum(axis=1)
 
-femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21'#, 'Marzo21', 'Abril21', 'Mayo21',
+femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21', 'Marzo21', #'Abril21', 'Mayo21',
                                    #'Junio21','Julio21','Agosto21','Septiembre21','Octubre21',
                                    #'Noviembre21','Diciembre21'
                                   ]].sum(axis=1)
@@ -179,7 +179,7 @@ pagra = ff[[
  'Enero20', 'Febrero20', 'Marzo20', 'Abril20', 'Mayo20', 'Junio20', 'Julio20', 'Agosto20',
     'Septiembre20','Octubre20', 'Noviembre20', 'Diciembre20',
 
- 'Enero21', 'Febrero21'#, 'Marzo21', 'Abril21', 'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
+ 'Enero21', 'Febrero21', 'Marzo21',# 'Abril21', 'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
   #  'Septiembre21','Octubre21','Noviembre21','Diciembre21'
             ]]
 
