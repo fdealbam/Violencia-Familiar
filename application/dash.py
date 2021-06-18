@@ -1,6 +1,4 @@
 
-
-
 import dash
 import matplotlib.pyplot as plt 
 import dash_bootstrap_components as dbc
@@ -37,7 +35,7 @@ d2 = today.strftime("Fecha de actualización : %d-%m-%Y")
 
 #os.chdir(r"C:\Users\PRIME\AnacondaProjects\Project_curso\\")
 
-delitos = pd.read_csv("https://github.com/fdealbam/Violencia-Familiar/blob/main/ViolenciaFamiliar2015_2021.csv?raw=true")
+delitos = pd.read_csv("https://raw.githubusercontent.com/fdealbam/Violencia-Familiar/main/ViolenciaFamiliar2015_2021.csv")
 delitos.drop('Unnamed: 0',1, inplace=True)
 
 delitos.groupby(['Año','Entidad','Tipo de delito'])['Enero', 
@@ -117,7 +115,7 @@ femi15_21 = ff[[
  'Enero20','Febrero20','Marzo20','Abril20','Mayo20','Junio20','Julio20',
  'Agosto20','Septiembre20','Octubre20','Noviembre20','Diciembre20',
     
- 'Enero21','Febrero21','Marzo21',#'Abril21','Mayo21','Junio21','Julio21',
+ 'Enero21','Febrero21','Marzo21','Abril21',#'Mayo21','Junio21','Julio21',
 # 'Agosto21','Septiembre21','Octubre21','Noviembre21','Diciembre21'
              ]]
 
@@ -143,7 +141,7 @@ femi15_21['Total2020']= femi15_21[[ 'Enero20', 'Febrero20', 'Marzo20', 'Abril20'
                                'Junio20', 'Julio20', 'Agosto20', 'Septiembre20', 'Octubre20',
                                'Noviembre20', 'Diciembre20',]].sum(axis=1)
 
-femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21', 'Marzo21', #'Abril21', 'Mayo21',
+femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21', 'Marzo21', 'Abril21', #'Mayo21',
                                    #'Junio21','Julio21','Agosto21','Septiembre21','Octubre21',
                                    #'Noviembre21','Diciembre21'
                                   ]].sum(axis=1)
@@ -179,7 +177,7 @@ pagra = ff[[
  'Enero20', 'Febrero20', 'Marzo20', 'Abril20', 'Mayo20', 'Junio20', 'Julio20', 'Agosto20',
     'Septiembre20','Octubre20', 'Noviembre20', 'Diciembre20',
 
- 'Enero21', 'Febrero21', 'Marzo21',# 'Abril21', 'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
+ 'Enero21', 'Febrero21', 'Marzo21','Abril21', #'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
   #  'Septiembre21','Octubre21','Noviembre21','Diciembre21'
             ]]
 
@@ -226,10 +224,6 @@ graf_meses.update_layout(
 
 
 
-#- FILE JSON PARA ENTIDADES ------------------------------------------------------------------------------
-
-
-
 ################################################ SUMA TODOS LOS AÑOS ranking de municipios por estado (3edos)
 
 #filtro de feminicidio
@@ -256,115 +250,115 @@ fem_filter1['Total']=fem_filter1['Total'].astype(int)
 
 ############################################### filtro para estados(4) e identifiación de mpios y abs feminicidios
 
-# estado 1
-estado1=fem_filter1[fem_filter1.Entidad=='Ciudad de México']
-edo1orden=estado1[['Municipio','Total']].sort_values('Total',ascending=False)
-#1
-edo1mpio1=edo1orden.iloc[0]['Municipio']
-edo1mpio1v=edo1orden.iloc[0]['Total']
-#2
-edo1mpio2=edo1orden.iloc[1]['Municipio']
-edo1mpio2v=edo1orden.iloc[1]['Total']
-#3
-edo1mpio3=edo1orden.iloc[2]['Municipio']
-edo1mpio3v=edo1orden.iloc[2]['Total']
-#4
-edo1mpio4=edo1orden.iloc[3]['Municipio']
-edo1mpio4v=edo1orden.iloc[3]['Total']
-#5
-edo1mpio5=edo1orden.iloc[4]['Municipio']
-edo1mpio5v=edo1orden.iloc[4]['Total']
-
-
-# estado 2
-estado2=fem_filter1[fem_filter1.Entidad=='Nuevo León']
-edo2orden=estado2[['Municipio','Total']].sort_values('Total',ascending=False)
-#1
-edo2mpio1=edo2orden.iloc[0]['Municipio']
-edo2mpio1v=edo2orden.iloc[0]['Total']
-#2
-edo2mpio2=edo2orden.iloc[1]['Municipio']
-edo2mpio2v=edo2orden.iloc[1]['Total']
-#3
-edo2mpio3=edo2orden.iloc[2]['Municipio']
-edo2mpio3v=edo2orden.iloc[2]['Total']
-#4
-edo2mpio4=edo2orden.iloc[3]['Municipio']
-edo2mpio4v=edo2orden.iloc[3]['Total']
-#5
-edo2mpio5=edo2orden.iloc[4]['Municipio']
-edo2mpio5v=edo2orden.iloc[4]['Total']
-
-
-# estado 3
-estado3=fem_filter1[fem_filter1.Entidad=='Chihuahua']
-edo3orden=estado3[['Municipio','Total']].sort_values('Total',ascending=False)
-#1
-edo3mpio1=edo3orden.iloc[0]['Municipio']
-edo3mpio1v=edo3orden.iloc[0]['Total']
-#2
-edo3mpio2=edo3orden.iloc[1]['Municipio']
-edo3mpio2v=edo3orden.iloc[1]['Total']
-#3
-edo3mpio3=edo3orden.iloc[2]['Municipio']
-edo3mpio3v=edo3orden.iloc[2]['Total']
-#4
-edo3mpio4=edo3orden.iloc[3]['Municipio']
-edo3mpio4v=edo3orden.iloc[3]['Total']
-#5
-edo3mpio5=edo3orden.iloc[4]['Municipio']
-edo3mpio5v=edo3orden.iloc[4]['Total']
-
-
-# estado 4
-estado4=fem_filter1[fem_filter1.Entidad=='Guanajuato']
-edo4orden=estado4[['Municipio','Total']].sort_values('Total',ascending=False)
-#1
-edo4mpio1=edo4orden.iloc[0]['Municipio']
-edo4mpio1v=edo4orden.iloc[0]['Total']
-#2
-edo4mpio2=edo4orden.iloc[1]['Municipio']
-edo4mpio2v=edo4orden.iloc[1]['Total']
-#3
-edo4mpio3=edo4orden.iloc[2]['Municipio']
-edo4mpio3v=edo4orden.iloc[2]['Total']
-#4
-edo4mpio4=edo4orden.iloc[3]['Municipio']
-edo4mpio4v=edo4orden.iloc[3]['Total']
-#5
-edo4mpio5=edo4orden.iloc[4]['Municipio']
-edo4mpio5v=edo4orden.iloc[4]['Total']
-
-
-
-######################################################### tablas Ranking municipios
-# tabla 1
-patabla1 = {'Mpio' : [edo1mpio1,edo1mpio2,edo1mpio3,edo1mpio4,edo1mpio5],
-            'Casos': [edo1mpio1v,edo1mpio2v,edo1mpio3v,edo1mpio4v,edo1mpio5v],}
-
-patabla1a = pd.DataFrame (patabla1, columns = ['Mpio','Casos'])
-
-
-############## tabla 2
-patabla2 = {'Mpio'  : [edo2mpio1,edo2mpio2,edo2mpio3,edo2mpio4,edo2mpio5],
-            'Casos' : [edo2mpio1v,edo2mpio2v,edo2mpio3v,edo2mpio4v,edo2mpio5v],}
-
-patabla2a = pd.DataFrame (patabla2, columns = ['Mpio','Casos'])
-
-
-############## tabla 3
-patabla3 = {'Mpio'  : [edo3mpio1,edo3mpio2,edo3mpio3,edo3mpio4,edo3mpio5],
-            'Casos' : [edo3mpio1v,edo3mpio2v,edo3mpio3v,edo3mpio4v,edo3mpio5v],}
-
-patabla3a = pd.DataFrame (patabla3, columns = ['Mpio','Casos'])
-
-
-############## tabla 4
-patabla4 = {'Mpio'  : [edo4mpio1,edo4mpio2,edo4mpio3,edo4mpio4,edo4mpio5],
-            'Casos' : [edo4mpio1v,edo4mpio2v,edo4mpio3v,edo4mpio4v,edo4mpio5v],}
-
-patabla4a = pd.DataFrame (patabla4, columns = ['Mpio','Casos'])
-
+## estado 1
+#estado1=fem_filter1[fem_filter1.Entidad=='Ciudad de México']
+#edo1orden=estado1[['Municipio','Total']].sort_values('Total',ascending=False)
+##1
+#edo1mpio1=edo1orden.iloc[0]['Municipio']
+#edo1mpio1v=edo1orden.iloc[0]['Total']
+##2
+#edo1mpio2=edo1orden.iloc[1]['Municipio']
+#edo1mpio2v=edo1orden.iloc[1]['Total']
+##3
+#edo1mpio3=edo1orden.iloc[2]['Municipio']
+#edo1mpio3v=edo1orden.iloc[2]['Total']
+##4
+#edo1mpio4=edo1orden.iloc[3]['Municipio']
+#edo1mpio4v=edo1orden.iloc[3]['Total']
+##5
+#edo1mpio5=edo1orden.iloc[4]['Municipio']
+#edo1mpio5v=edo1orden.iloc[4]['Total']
+#
+#
+## estado 2
+#estado2=fem_filter1[fem_filter1.Entidad=='Nuevo León']
+#edo2orden=estado2[['Municipio','Total']].sort_values('Total',ascending=False)
+##1
+#edo2mpio1=edo2orden.iloc[0]['Municipio']
+#edo2mpio1v=edo2orden.iloc[0]['Total']
+##2
+#edo2mpio2=edo2orden.iloc[1]['Municipio']
+#edo2mpio2v=edo2orden.iloc[1]['Total']
+##3
+#edo2mpio3=edo2orden.iloc[2]['Municipio']
+#edo2mpio3v=edo2orden.iloc[2]['Total']
+##4
+#edo2mpio4=edo2orden.iloc[3]['Municipio']
+#edo2mpio4v=edo2orden.iloc[3]['Total']
+##5
+#edo2mpio5=edo2orden.iloc[4]['Municipio']
+#edo2mpio5v=edo2orden.iloc[4]['Total']
+#
+#
+## estado 3
+#estado3=fem_filter1[fem_filter1.Entidad=='Chihuahua']
+#edo3orden=estado3[['Municipio','Total']].sort_values('Total',ascending=False)
+##1
+#edo3mpio1=edo3orden.iloc[0]['Municipio']
+#edo3mpio1v=edo3orden.iloc[0]['Total']
+##2
+#edo3mpio2=edo3orden.iloc[1]['Municipio']
+#edo3mpio2v=edo3orden.iloc[1]['Total']
+##3
+#edo3mpio3=edo3orden.iloc[2]['Municipio']
+#edo3mpio3v=edo3orden.iloc[2]['Total']
+##4
+#edo3mpio4=edo3orden.iloc[3]['Municipio']
+#edo3mpio4v=edo3orden.iloc[3]['Total']
+##5
+#edo3mpio5=edo3orden.iloc[4]['Municipio']
+#edo3mpio5v=edo3orden.iloc[4]['Total']
+#
+#
+## estado 4
+#estado4=fem_filter1[fem_filter1.Entidad=='Guanajuato']
+#edo4orden=estado4[['Municipio','Total']].sort_values('Total',ascending=False)
+##1
+#edo4mpio1=edo4orden.iloc[0]['Municipio']
+#edo4mpio1v=edo4orden.iloc[0]['Total']
+##2
+#edo4mpio2=edo4orden.iloc[1]['Municipio']
+#edo4mpio2v=edo4orden.iloc[1]['Total']
+##3
+#edo4mpio3=edo4orden.iloc[2]['Municipio']
+#edo4mpio3v=edo4orden.iloc[2]['Total']
+##4
+#edo4mpio4=edo4orden.iloc[3]['Municipio']
+#edo4mpio4v=edo4orden.iloc[3]['Total']
+##5
+#edo4mpio5=edo4orden.iloc[4]['Municipio']
+#edo4mpio5v=edo4orden.iloc[4]['Total']
+#
+#
+#
+########################################################## tablas Ranking municipios
+## tabla 1
+##patabla1 = {'Mpio' : [edo1mpio1,edo1mpio2,edo1mpio3,edo1mpio4,edo1mpio5],
+#            'Casos': [edo1mpio1v,edo1mpio2v,edo1mpio3v,edo1mpio4v,edo1mpio5v],}
+#
+#patabla1a = pd.DataFrame (patabla1, columns = ['Mpio','Casos'])
+#
+#
+############### tabla 2
+#patabla2 = {'Mpio'  : [edo2mpio1,edo2mpio2,edo2mpio3,edo2mpio4,edo2mpio5],
+#            'Casos' : [edo2mpio1v,edo2mpio2v,edo2mpio3v,edo2mpio4v,edo2mpio5v],}
+#
+#patabla2a = pd.DataFrame (patabla2, columns = ['Mpio','Casos'])
+#
+#
+############### tabla 3
+#patabla3 = {'Mpio'  : [edo3mpio1,edo3mpio2,edo3mpio3,edo3mpio4,edo3mpio5],
+#            'Casos' : [edo3mpio1v,edo3mpio2v,edo3mpio3v,edo3mpio4v,edo3mpio5v],}
+#
+#patabla3a = pd.DataFrame (patabla3, columns = ['Mpio','Casos'])
+#
+#
+############### tabla 4
+#patabla4 = {'Mpio'  : [edo4mpio1,edo4mpio2,edo4mpio3,edo4mpio4,edo4mpio5],
+#            'Casos' : [edo4mpio1v,edo4mpio2v,edo4mpio3v,edo4mpio4v,edo4mpio5v],}
+#
+#patabla4a = pd.DataFrame (patabla4, columns = ['Mpio','Casos'])
+#
 
 
 
@@ -447,7 +441,7 @@ graf_totfem.update_layout(
 
 ########### Define your variables
 mytitle=' '
-tabtitle='Violencia familiar'
+tabtitle='Abuso sexual'
 sourceurl='https://www.gob.mx/sesnsp/acciones-y-programas/datos-abiertos-de-incidencia-delictiva?state=published'
 
 
@@ -456,13 +450,36 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes. LUX], server=server)
 
 body = html.Div([
 # Cintillo 000
+    
+   html.Br(),
+    
+   dbc.Row([
+                                    #https://github.com/fdealbam/CamaraDiputados/blob/b11ef31e8e0f73e1a4a06ce60402563e1bd0122e/application/static/logocamara.jfif
+           dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/0entrada/blob/ce2cda9ccf7732861b8494b36562ebe9c8c642a6/application/static/logo%20cesopycamara.jpeg?raw=true"),
+                        width=5, md={'size': 2,  "offset": 2, }),
+            
+           dbc.Col(html.H5(" Centro de Estudios Sociales y de Opinión Pública," 
+                           " Cámara de Diputados"
+                           " México, 2021 "),
+                  width={'size': 3, 'offset': 0}),
+               ], justify="end",),
+            
+   
+   
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    
+    
         dbc.Row(
            [
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true"),
-                        width={'size': 1,  "offset": 1}),
-               dbc.Col(html.H1("Violencia familiar (2015-2020)"),
-                        width={'offset' : 2}),
-           ]),
+               #dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true"),
+               #         width={'size': 1,  "offset": 1}),
+               dbc.Col(html.P("Violencia Familiar"),
+                        style={"font-size": 86, "text-align": "center",
+                              "text-shadow": "10px 20px 30px black",}),
+           ], justify= "start"),
 
 #Cintillo 00    
     dbc.Row(
@@ -473,13 +490,24 @@ body = html.Div([
                dbc.Col(html.H6("Fuente: SENSNSP"),
                         width={'size': 3,  "offset":1 }),
             ]),
-
+               
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+     
+    
      html.Br(),
-     html.Br(),
-     html.Br(),
-     html.Br(),
-     html.Br(),
-     html.Br(),
+       html.Br(),
+        dbc.Row(
+           [
+               dbc.Col(html.P("Evolución de la incidencia de violencia familiar" ),
+                        style={"font-size": 56, "text-align": "left", "margin-left":"50px",
+                              "text-shadow": "10px 20px 30px black",}),
+           ], justify= "start"),
+    
+       html.Br(),
+       html.Br(),
 #cintillo 0
     
      dbc.Row(
@@ -495,96 +523,76 @@ body = html.Div([
     
      dbc.Row(
            [
-               dbc.Col(html.H5("2015")),
-               dbc.Col(html.H5("2016")),
-               dbc.Col(html.H5("2017")),
-               dbc.Col(html.H5("2018")),
-               dbc.Col(html.H5("2019")),
-               dbc.Col(html.H5("2020")),
-           ], justify= "start"),
+               dbc.Col(dbc.Button(([html.H5("2015", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2015:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2015.jpeg?raw=true",
+                                                               style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         'margin-left': '10px',
+                        'width': '250px'
+                         }, disabled=True)),
+               
+               dbc.Col(dbc.Button(([html.H5("2016", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2016:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2016.jpeg?raw=true",
+                                                 style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         
+                        'width': '250px'
+                         }, disabled=True)),
+               dbc.Col(dbc.Button(([html.H5("2017", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2017:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2017.jpeg?raw=true",
+                                                 style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         
+                        'width': '250px'
+                         }, disabled=True)),
+               dbc.Col(dbc.Button(([html.H5("2018", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2018:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2018.jpeg?raw=true",
+                                                 style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         
+                        'width': '250px'
+                         }, disabled=True)),
+               dbc.Col(dbc.Button(([html.H5("2019", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2019:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2019.jpeg?raw=true",
+                                                 style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         
+                        'width': '250px'
+                         }, disabled=True)),
+               dbc.Col(dbc.Button(([html.H5("2020", style={"font-size": 18,"color": "black","background-color": "white"}),
+                                    html.H1([str(f"{conf_2020:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
+                                    dbc.CardImg(src="https://github.com/fdealbam/abusosexual/blob/main/application/static/Mapa%20abusosexual%20Total2020.jpeg?raw=true",
+                                                 style={"background-color":"white"}),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         
+                        'width': '250px'
+                         }, disabled=True)),
+                                                        ]),
     
-#Cintillo 1
-    dbc.Row(
-           [
-               dbc.Col(html.H3([str(f"{conf_2015:,d}")])),
-                   #conf_2015)),d
-               dbc.Col(html.H3([str(f"{conf_2016:,d}")])),
-               dbc.Col(html.H3([str(f"{conf_2017:,d}")])),
-               dbc.Col(html.H3([str(f"{conf_2018:,d}")])),
-               dbc.Col(html.H3([str(f"{conf_2019:,d}")])),
-               dbc.Col(html.H3([str(f"{conf_2020:,d}")])),
-            ],justify= "start"),
-    
-# Cintillo 1.1
-        dbc.Row([
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2015.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2016.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2017.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2018.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2019.jpeg?raw=true")),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20Violenciafamiliar%20Total2020.jpeg?raw=true")),
-               #dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20ViolenciafamiliarMapa%20Violenciafamiliar%%20Total2021.jpeg?raw=true")),
-          
-        ]),
-# Cintillo párrafos
+
+ 
+       html.Br(),
+       html.Br(),
+       dbc.Row([
+               dbc.Col(html.P("Fuente: SENSNSP"),
+                        style={#"margin-left": "90px", 
+                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
+           ], justify= "right"),
        html.Br(),
        html.Br(),
        html.Br(),
        html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-#      dbc.Row([
-#               dbc.Col(dbc.Container([
-#                       html.P(
-#                           "En 2015 en 10 entidades se registró  71.56 % de la violencia familiar (91,181 delitos) :  Nuevo León  (17,062),  Ciudad de México  (16,103),  Chihuahua  (12,273),  Guanajuato  (10,298),  Baja California  (8,892),  Jalisco  (8,543),  Puebla  (5,024),  México  (4,722),  Tabasco  (4,230),  y  Morelos  (4,034).",
-#                    className="top",)
-#                                ], fluid=True)
-#                       
-#                      ),
-#          dbc.Col(dbc.Jumbotron([
-#                   dbc.Container([
-#                       html.P(
-#                           "En 2016 en 10 entidades se registró  67.16 % de la violencia familiar (103,361 delitos) :  Ciudad de México  (18,426),  Nuevo León  (17,773),  Chihuahua  (11,960),  Jalisco  (11,431),  Guanajuato  (11,133),  Baja California  (8,315),  Coahuila de Zaragoza  (6,885),  Tamaulipas  (6,378),  Puebla  (5,586),  y  México  (5,474).",
-#                    className="top")
-#                                ], fluid=True)
-#                                    ], fluid=True)
-#                      ),
-#          dbc.Col(
-#                   dbc.Container([
-#                       html.P(
-#                           "En 2017 en 10 entidades se registró  62.45 % de la violencia familiar (105,906 delitos) :  Ciudad de México  (18,360),  Nuevo León  (17,145),  Chihuahua  (11,583),  Guanajuato  (11,253),  Jalisco  (9,557),  Coahuila de Zaragoza  (8,968),  Baja California  (8,554),  Tamaulipas  (7,030),  México  (6,860),  y  Tabasco  (6,596).",
-#                    className="top")
-#                                ], fluid=True)
-#                                    )
-#                      ,
-#          dbc.Col(dbc.Jumbotron([
-#                   dbc.Container([
-#                       html.P(
-#                           "En 2018 en 10 entidades se registró  59.54 % de la violencia familiar (107,290 delitos) :  Ciudad de México  (19,931),  Nuevo León  (16,410),  Chihuahua  (11,227),  Guanajuato  (10,356),  Baja California  (9,904),  Coahuila de Zaragoza  (9,791),  Jalisco  (8,850),  Puebla  (7,296),  Tamaulipas  (7,029),  y  México  (6,496).",
-#                    className="top")
-#                                ], fluid=True)
-#                                    ], fluid=True)
-#                      ),
-#          dbc.Col(dbc.Container([
-#                       html.P(
-#                           "En 2019 en 10 entidades se registró  59.48 % de la violencia familiar (125,029 delitos) :  Ciudad de México  (25,775),  Nuevo León  (16,339),  Guanajuato  (11,142),  Jalisco  (11,053),  Chihuahua  (10,968),  Coahuila de Zaragoza  (10,647),  Baja California  (10,455),  Veracruz de Ignacio de la Llave  (10,324),  México  (9,249),  y  Puebla  (9,077).",
-#                    className="top")
-#                                ], fluid=True)
-#                      ),
-#          dbc.Col(dbc.Jumbotron([
-#                   dbc.Container([
-#                       html.P(
-#                          "En 2020 en 10 entidades se registró  61.55 % de la violencia familiar (135,425 delitos) :  Ciudad de México  (27,769),  Nuevo León  (17,940),  México  (16,915),  Jalisco  (11,890),  Chihuahua  (11,293),  Baja California  (10,781),  Veracruz de Ignacio de la Llave  (10,386),  Guanajuato  (10,035),  Coahuila de Zaragoza  (9,291),  y  Puebla  (9,125).",
-#                    className="top")
-#                                ], fluid=True)
-#                                    ], fluid=True),
-#                  
-#                      ),
-# 
-#      ]),
-#                
 #---------Grafica mensual
      dbc.Row(
            [
@@ -592,7 +600,7 @@ body = html.Div([
                        dbc.Badge("mensuales", color="info", className="mr-1")]), 
                                        width={'size': 11,  "offset":1 })]),
        dbc.Row([        
-               dbc.Col(html.H5("(hasta marzo 2021)"),
+               dbc.Col(html.H5("(hasta abril 2021)"),
                                        width={ 'size': 3, "offset":1 }),
 
             ]),
@@ -603,17 +611,17 @@ body = html.Div([
         ]),
 
       
+          html.Br(),
+       html.Br(),
+       dbc.Row([
+               dbc.Col(html.P("Fuente: SENSNSP"),
+                        style={#"margin-left": "90px", 
+                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
+           ], justify= "right"),
        html.Br(),
        html.Br(),
        html.Br(),
        html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-    
-##Cintillo mapas y ranking
-
     #títulos
      dbc.Row(
            [
@@ -629,94 +637,86 @@ body = html.Div([
     
      dbc.Row(
            [
-               dbc.Col(html.H3("Ciudad de México", ),
-                       #width=1, 
-                       lg={'size': 3,  "offset": 1, }
-                      ),
+               dbc.Col(dbc.Button(([html.P("Ciudad de México", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx2.jpeg?raw=true",
+                  style={'size': 2,}),
+                          html.P(
+                          "Los 10 Municipios con mayor número de casos de violencia familiar son: Iztapalapa (25531), Gustavo A. Madero (16243), Cuauhtémoc (11085), Álvaro Obregón (10539), Tlalpan (9827), Coyoacán (8968), Iztacalco (8424), Venustiano Carranza (7757), Xochimilco (6987), y Azcapotzalco (6779).",
+                     style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                         'margin-left': '300px',
+                        'width': '550px',
+                         
+                         }, disabled=True)),
                
-               dbc.Col(html.H3("México"),
-                        #width=1, 
-                       lg={'size': 1,  "offset": 1, }
-                      ),
-               
-               dbc.Col(html.H3("Nuevo León "),
-                       # width=1, 
-                       lg={'size': 2,  "offset": 1, }
-                      ),
-                      
-               dbc.Col(html.H3("Jalisco "),
-                       # width=1, 
-                       lg={'size': 1,  "offset": 1, }
-                      ),
-           ], #, justify= "end", 
-    align= "center"),
-
+               dbc.Col(dbc.Button(([html.P("Nuevo León", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon2.jpeg?raw=true",
+                                    style={'size': 2,}),
+                       html.P(
+                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Monterrey (20736), Guadalupe (11831), Apodaca (11344), Juárez (10447), García (10276), San Nicolás de los Garza (5933), Santa Catarina (5745), Cadereyta Jiménez (3257), Pesquería (3151), y Salinas Victoria (1690).",
+                              style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
+                       ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                        # 'margin-left': '10px',
+                        'width': '550px',
+                                  
+                         }, disabled=True)),
+     ]),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
+    html.Br(),
     
-    dbc.Row([
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx.jpeg?raw=true"),
-                      #width=4,lg={'size': 3,  "offset": 3, }
-                      ),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/mx1.jpg?raw=true"),
-                      #width=4,lg={'size': 3,  "offset": 3, }
-                      ),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon.jpeg?raw=true"),
-                      #width=4,lg={'size': 3,  "offset": 3, }
-                      ),
-               dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/jal.jpeg?raw=true"),
-                      #width=4,lg={'size': 3,  "offset": 3, }
-                      ),
-           ], no_gutters=True),
+                dbc.Row([
+          dbc.Col(dbc.Button(([html.P("Chihuahua ", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
+    
+                       html.P(
+                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Juárez (38353), Chihuahua (20764), Delicias (3300), Hidalgo del Parral (3009), Cuauhtémoc (2306), Nuevo Casas Grandes (941), Camargo (639), Meoqui (422), Aldama (419), y Bocoyna (364).",
+                           style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
+                              ]),
+                             style={"background-color":"white",
+                                    "box-shadow": "10px 20px 30px black",
+                                    'margin-left': '300px',
+                                    'width': '550px',
+                                  
+                         }, disabled=True)),
+                       
+               dbc.Col(dbc.Button(([html.P("Guanajuato ", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/gjto2.jpeg?raw=true"),
+                   
+                                   
+                        html.P(
+                          "Los 10 Municipios con mayor número de casos de violencia familiar son: León (16069), Irapuato (11529), Celaya (10788), Guanajuato (4462), Salamanca (3393), San Miguel de Allende (2497), Salvatierra (1255), Dolores Hidalgo Cuna de la Independencia Nacional (1236), Cortazar (1063), y Apaseo el Grande (1021).",
+                           style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
+               ]), style={"background-color":"white",
+                         "box-shadow": "10px 20px 30px black",
+                        # 'margin-left': '10px',
+                        'width': '550px',
+                        
+                         }, disabled=True)),
+         
+          ]),
+  
 
     #################################################################  MUNICIPIOS ranking    
-    dbc.Row([
-               dbc.Col(dbc.Container([
-                       html.P(
-                          "Las 10 alcaldías con más violencia familiar fueron: Iztapalapa (24,331), Gustavo A. Madero (15,405), Cuauhtémoc (10,556), Álvaro Obregón (10,006), Tlalpan (9,403), Coyoacán (8,537), Iztacalco (8,115), Venustiano Carranza (7,423), Xochimilco (6,696), y Azcapotzalco (6,457).",
- 
-                    className="top",)
-                                ], fluid=True)
-                       
-                      ),
-          dbc.Col(dbc.Jumbotron([
-                   dbc.Container([
-                       html.P(
-                           "Los 10 municipios con más violencia familiar fueron: Ecatepec de Morelos (5,828), Toluca (3,926), Nezahualcóyotl (3,353), Naucalpan de Juárez (3,304), Cuautitlán Izcalli (2,310), Tlalnepantla de Baz (1,964), Atizapán de Zaragoza (1,936), Chalco (1,853), Tultitlán (1,835), y Tecámac (1,664).",
-                    className="top")
-                                ], fluid=True)
-                                    ], fluid=True)
-                      ),
 
-       dbc.Col(
-                   dbc.Container([
-                       html.P(
-                           "Los 10 municipios con más violencia familiar fueron: Monterrey (20,079), Guadalupe (11,511), Apodaca (10,997), Juárez (10,074), García (9,976), San Nicolás de los Garza (5,758), Santa Catarina (5,543), Cadereyta Jiménez (3,127), Pesquería (3,029), y Salinas Victoria (1,633).",
-                    className="top")
-                                ], fluid=True)
-                                    )
-                      ,
-          dbc.Col(dbc.Jumbotron([
-                   dbc.Container([
-                       html.P(
-                          "Los 10 municipios con más violencia familiar fueron: Guadalajara (14,481), Zapopan (11,968), Tlajomulco de Zúñiga (6,400), Tonalá (5,527), Puerto Vallarta (3,333), El Salto (1,779), Tepatitlán de Morelos (964), Lagos de Moreno (889), Autlán de Navarro (759), y Ameca (660).",
-                    className="top")
-                                ], fluid=True)
-                                    ], fluid=True)
-                      ),
-      ]),
-#    
-    
-    dbc.Row([
-               
-           ]),
+
+  
+         html.Br(),
+       html.Br(),
+       dbc.Row([
+               dbc.Col(html.P("Fuente: SENSNSP"),
+                        style={#"margin-left": "90px", 
+                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
+           ], justify= "right"),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
    
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
-       html.Br(),
        
 #---------Grafica por entidad
      dbc.Row(
@@ -727,7 +727,7 @@ body = html.Div([
             ]),
 
        html.Br(),
-       html.Br(),
+    html.Br(),
        html.Br(),
     
     dbc.Row(
@@ -748,11 +748,26 @@ body = html.Div([
             dbc.Col(dcc.Graph(figure= graf_tasafem, config= "autosize")),
                    #lg={'size': 5,  "offset": 1,}),
         ], justify="end", no_gutters=True,),
-  html.Br(),
-  html.Br(),
-  html.Br(),
-  
-  dbc.Row([
+
+             html.Br(),
+       html.Br(),
+       dbc.Row([
+               dbc.Col(html.P("Fuente: SENSNSP"),
+                        style={#"margin-left": "90px", 
+                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
+           ], justify= "right"),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+       html.Br(),
+    
+
+        
+    
+    
+    
+
+    dbc.Row([
                                     #https://github.com/fdealbam/CamaraDiputados/blob/b11ef31e8e0f73e1a4a06ce60402563e1bd0122e/application/static/logocamara.jfif
            dbc.Col(dbc.CardImg(src="https://github.com/fdealbam/CamaraDiputados/blob/main/application/static/logocamara.jfif?raw=true"),
                         width=4, lg={'size': 1,  "offset": 3, }),
@@ -762,24 +777,20 @@ body = html.Div([
                            " México, 2021 "),
                   width={'size': 3, 'offset': 0}),
                ], justify="start",),
-    dbc.Row([    
-           dbc.Col(html.H5([dbc.Badge("Equipo responsable", 
-                          href="https://raw.githubusercontent.com/fdealbam/feminicidios/main/Autores.pdf",
-                          #color="light",
-                          #className="ml-1")
+   dbc.Row([    
+           dbc.Col(html.P([dbc.Badge("Equipo responsable", style={"font-size":20},
+                          href="https://innovation-learning.herokuapp.com/",
                                      )]),
-                  width={'size': 3,  "offset": 4}),
-                       ], justify="start",),    
-  html.Br(),
-  html.Br(),
-  html.Br(),
-  html.Br(),
-    
-    
+                  width={'size': 3,  "offset": 3}),
+                       ], justify="start",),
+        
             ])
 
 
-app.layout = html.Div([body])
+app.layout = html.Div([body],
+                              style={'width': '1850px',
+                                    "background-color": "lightgray"}
+                                    )
 
 from application.dash import app
 from settings import config
