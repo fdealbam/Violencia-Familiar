@@ -557,7 +557,7 @@ body = html.Div([
                        dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx2.jpeg?raw=true",
                   style={'size': 2,}),
                           html.P(
-                          "Los 10 Municipios con mayor número de casos de violencia familiar son: Iztapalapa (25531), Gustavo A. Madero (16243), Cuauhtémoc (11085), Álvaro Obregón (10539), Tlalpan (9827), Coyoacán (8968), Iztacalco (8424), Venustiano Carranza (7757), Xochimilco (6987), y Azcapotzalco (6779).",
+                          "Las 10 Alacaldías con mayor número de casos de violencia familiar son: Iztapalapa (25,531), Gustavo A. Madero (16,243), Cuauhtémoc (11,085), Álvaro Obregón (10,539), Tlalpan (9,827), Coyoacán (8,968), Iztacalco (8,424), Venustiano Carranza (7,757), Xochimilco (6,987), y Azcapotzalco (6,779).",
                      style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
                ]), style={"background-color":"white",
                          "box-shadow": "10px 20px 30px black",
@@ -570,7 +570,7 @@ body = html.Div([
                        dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon2.jpeg?raw=true",
                                     style={'size': 2,}),
                        html.P(
-                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Monterrey (20736), Guadalupe (11831), Apodaca (11344), Juárez (10447), García (10276), San Nicolás de los Garza (5933), Santa Catarina (5745), Cadereyta Jiménez (3257), Pesquería (3151), y Salinas Victoria (1690).",
+                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Monterrey (20,736), Guadalupe (11,831), Apodaca (11,344), Juárez (10,447), García (10,276), San Nicolás de los Garza (5,933), Santa Catarina (5,745), Cadereyta Jiménez (3,257), Pesquería (3,151), y Salinas Victoria (1,690).",
                               style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
                        ]), style={"background-color":"white",
                          "box-shadow": "10px 20px 30px black",
@@ -590,7 +590,7 @@ body = html.Div([
                        dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
     
                        html.P(
-                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Juárez (38353), Chihuahua (20764), Delicias (3300), Hidalgo del Parral (3009), Cuauhtémoc (2306), Nuevo Casas Grandes (941), Camargo (639), Meoqui (422), Aldama (419), y Bocoyna (364).",
+                           "Los 10 Municipios con mayor número de casos de violencia familiar son: Juárez (38,353), Chihuahua (20,764), Delicias (3,300), Hidalgo del Parral (3,009), Cuauhtémoc (2,306), Nuevo Casas Grandes (941), Camargo (639), Meoqui (422), Aldama (419), y Bocoyna (364).",
                            style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
                               ]),
                              style={"background-color":"white",
@@ -605,7 +605,7 @@ body = html.Div([
                    
                                    
                         html.P(
-                          "Los 10 Municipios con mayor número de casos de violencia familiar son: León (16069), Irapuato (11529), Celaya (10788), Guanajuato (4462), Salamanca (3393), San Miguel de Allende (2497), Salvatierra (1255), Dolores Hidalgo Cuna de la Independencia Nacional (1236), Cortazar (1063), y Apaseo el Grande (1021).",
+                          "Los 10 Municipios con mayor número de casos de violencia familiar son: León (16,069), Irapuato (11,529), Celaya (10,788), Guanajuato (4,462), Salamanca (3,393), San Miguel de Allende (2,497), Salvatierra (1,255), Dolores Hidalgo Cuna de la Independencia Nacional (1,236), Cortazar (1,063), y Apaseo el Grande (1,021).",
                            style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
                ]), style={"background-color":"white",
                          "box-shadow": "10px 20px 30px black",
