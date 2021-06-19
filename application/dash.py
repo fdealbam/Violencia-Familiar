@@ -388,7 +388,7 @@ body = html.Div([
             [
                 #html.H4("Consideraciones generales "),
                 html.P(
-                    "El delito de violencia familiar"
+                    "El delito de violencia familiar "
                     "es uno de los delitos más graves de la violencia de género que se vive en el país, "
                     "además, es problema aún irresuelto y es tema central de la " 
                     "agenda legislativa, pero hoy alcanza relevancia en la agenda seguridad pública nacional, también. "
