@@ -392,7 +392,7 @@ body = html.Div([
                     "es uno de los delitos más graves de la violencia de género que se vive en el país, "
                     "además, es problema aún irresuelto y es tema central de la " 
                     "agenda legislativa, pero hoy alcanza relevancia en la agenda seguridad pública nacional, también. "
-                    "Este dashboard analítico se compone de una sección en la cual tratamos el delito de violenia familiar, observamos "
+                    "Este dashboard analítico se compone de una sección en la cual tratamos el delito de violencia familiar, observamos "
                     "su gravedad según intervalos anuales o mensuales; incluimos el análisis detallado de cuatro "
                     "entidades con más incidencias de este delito; finalmente, comparamos los rankings por entidad "
                     "según sumas del periódo 2015 al 2021 con las tasas por entidad del mismo intervalo. " 
