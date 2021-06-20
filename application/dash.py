@@ -700,7 +700,7 @@ body = html.Div([
                     "dan seguimiento al tema. "
                     "En ningún caso, este contenido representa algún "
                     "posicionamiento partidista, personal o institucional, mucho menos opinión o postura alguna "
-                    "sobre el fenómeno." 
+                    "sobre el fenómeno. " 
                     "En los aspectos técnicos, esta información fue tratada con el lenguaje de programación Python "
                     "y varias de las librerías más comunes (Dash, Choropleth, Pandas, Numpy, Geopandas, etc.), "
                     "que nos ayudan a automatizar la recurrencia (request) a la fuente de información en tiempo real "
