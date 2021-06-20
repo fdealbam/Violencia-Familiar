@@ -397,7 +397,7 @@ body = html.Div([
                     "entidades con más incidencias de este delito; finalmente, comparamos los rankings por entidad "
                     "según sumas del periódo 2015 al 2021 con las tasas por entidad del mismo intervalo. " 
                     " "                    
-                    "Hoy existen cada vez mayor atención institucional para atender la violencia contra la familia y es fuerte "
+                    "Hoy existen cada vez mayor atención institucional para atender la violencia familiar y es fuerte "
                     "preocupación de la sociedad, esto último se evidencia en el hecho que todos seamos más vigilantes al respecto. "
                     "No obstante, aún hace falta más acción social, sobretodo, más intervención institucional "
                     "para diseñar estrategias efectivas de prevención y promover su denuncia. Es imperativo "
