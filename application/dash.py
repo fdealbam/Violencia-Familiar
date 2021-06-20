@@ -532,7 +532,7 @@ body = html.Div([
        dbc.Row([
                dbc.Col(html.P("Fuente: SENSNSP"),
                         style={#"margin-left": "90px", 
-                               "font-size": 22, "text-align": "right", "margin-right":"400px"}),
+                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
            ], justify= "right"),
        html.Br(),
        html.Br(),
@@ -626,7 +626,7 @@ body = html.Div([
        dbc.Row([
                dbc.Col(html.P("Fuente: SENSNSP"),
                         style={#"margin-left": "90px", 
-                               "font-size": 22, "text-align": "right", "margin-right":"50px"}),
+                               "font-size": 22, "text-align": "right", "margin-right":"400px"}),
            ], justify= "right"),
        html.Br(),
        html.Br(),
