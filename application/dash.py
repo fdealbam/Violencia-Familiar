@@ -689,7 +689,7 @@ body = html.Div([
                 html.H4("Metodología "),
                 html.P(
                     "El presente dashboard es un ejercicio institucional con el objeto de "
-                    "informar a los diputadas y diputados y público interesado sobre un tema "
+                    "informar a las diputadas y diputados y público interesado sobre un tema "
                     "de vital importancia en la vida política. "
                     "La metodología que hemos empleado para analizar los datos la detallamos enseguida. "
                     "Como se indica en cada caso, la información sobre el delito violencia familiar proviene del Secretariado "
