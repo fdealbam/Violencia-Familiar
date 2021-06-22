@@ -439,7 +439,7 @@ body = html.Div([
     
      dbc.Row(
            [
-               dbc.Col(dbc.Button(([html.H5("2015", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2015", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2015:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2015.png?raw=true",
                                                                style={"background-color":"white"}),
@@ -449,7 +449,7 @@ body = html.Div([
                         'width': '200px'
                          }, disabled=True)),
                
-               dbc.Col(dbc.Button(([html.H5("2016", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2016", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2016:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2016.png?raw=true",
                                                  style={"background-color":"white"}),
@@ -458,7 +458,7 @@ body = html.Div([
                          
                         'width': '200px'
                          }, disabled=True)),
-               dbc.Col(dbc.Button(([html.H5("2017", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2017", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2017:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2017.png?raw=true",
                                                  style={"background-color":"white"}),
@@ -467,7 +467,7 @@ body = html.Div([
                          
                         'width': '200px'
                          }, disabled=True)),
-               dbc.Col(dbc.Button(([html.H5("2018", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2018", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2018:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2018.png?raw=true",
                                                  style={"background-color":"white"}),
@@ -476,7 +476,7 @@ body = html.Div([
                          
                         'width': '200px'
                          }, disabled=True)),
-               dbc.Col(dbc.Button(([html.H5("2019", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2019", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2019:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2019.png?raw=true",
                                                  style={"background-color":"white"}),
@@ -485,7 +485,7 @@ body = html.Div([
                          
                         'width': '200px'
                          }, disabled=True)),
-               dbc.Col(dbc.Button(([html.H5("2020", style={"font-size": 18,"color": "black","background-color": "white"}),
+               dbc.Col(dbc.Button(([html.H5("2020", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2020:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
                                     dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2020.png?raw=true",
                                                  style={"background-color":"white"}),
@@ -494,9 +494,9 @@ body = html.Div([
                          
                         'width': '200px'
                          }, disabled=True)),
-              dbc.Col(dbc.Button(([html.H5("2021", style={"font-size": 18,"color": "black","background-color": "white"}),
+              dbc.Col(dbc.Button(([html.H5("2021", style={"font-size": 16,"color": "black","background-color": "white"}),
                                     html.H1([str(f"{conf_2021:,d}")],style={"font-size": 45, "color": "black","background-color": "white"}),
-                                    dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%21familiar%20Total2021.png?raw=true",
+                                    dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa%20vilencia%20familiar%20Total2021.png?raw=true",
                                                  style={"background-color":"white"}),
                ]), style={"background-color":"white",
                          "box-shadow": "10px 20px 30px black",
