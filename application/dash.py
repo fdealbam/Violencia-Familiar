@@ -525,7 +525,7 @@ body = html.Div([
                        dbc.Badge("mensuales", color="info", className="mr-1")]), 
                                        width={'size': 11,  "offset":1 })]),
        dbc.Row([        
-               dbc.Col(html.H5("(hasta abril 2021)"),
+               dbc.Col(html.H5("(hasta mayo 2021)"),
                                        width={ 'size': 3, "offset":1 }),
 
             ]),
