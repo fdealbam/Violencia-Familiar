@@ -28,6 +28,13 @@ today = date.today()
 d2 = today.strftime("Fecha de actualización : %d-%m-%Y")
 
 
+tabla1 = pd.read_csv('https://raw.githubusercontent.com/fdealbam/violenciadegenero/main/Tabla1.csv')              
+tabla1_f = tabla1[tabla1['Tipo de delito']== 'Violencia familiar' ]
+tabla1_f.reset_index(inplace=True,)
+TOTVIOLENCFAM = tabla1_f.iloc[0]['GRAND TOTAL']
+TASAVIOLENCFAM = tabla1_f.iloc[0]['tasa_acumulada']
+
+
 
 ###############################
 # DATABASES
@@ -388,21 +395,13 @@ body = html.Div([
             [
                 #html.H4("Consideraciones generales "),
                 html.P(
-                    "El delito de violencia familiar "
-                    "es uno de los delitos más graves de la violencia de género que se vive en el país, "
-                    "además, es problema aún irresuelto y es tema central de la " 
-                    "agenda legislativa, pero hoy alcanza relevancia en la agenda seguridad pública nacional, también. "
-                    "Este dashboard analítico se compone de una sección en la cual tratamos el delito de violencia familiar, observamos "
-                    "su gravedad según intervalos anuales o mensuales; incluimos el análisis detallado de cuatro "
-                    "entidades con más incidencias de este delito; finalmente, comparamos los rankings por entidad "
-                    "según sumas del periódo 2015 al 2021 con las tasas por entidad del mismo intervalo. " 
-                    " "                    
-                    "Hoy existen cada vez mayor atención institucional para atender la violencia familiar y es fuerte "
-                    "preocupación de la sociedad, esto último se evidencia en el hecho que todos seamos más vigilantes al respecto. "
-                    "No obstante, aún hace falta más acción social, sobretodo, más intervención institucional "
-                    "para diseñar estrategias efectivas de prevención y promover su denuncia. Es imperativo "
-                    "acabar con estas violencias de género. "
-                    "",
+                    "La violencia familiar tiene la más alta incidencia entre los delitos de género en el país."+
+      " Entre 2015 y 2021 se registraron "+ str(f"{int(TOTVIOLENCFAM):,}") +" casos, lo que representa una tasa de "+
+       str(TASAVIOLENCFAM) +" delitos por cada 100 mil habitantes. "+
+      "En este dashboard analítico observamos su gravedad según intervalos anuales e intervalos mensuales"+
+      "; también incluimos un análisis detallado de las cuatro entidades con más incidencias en este delito"+
+      "; finalmente, comparamos los rankings por entidad según sumas acumuladas respecto a las tasas, ambas "+
+      "por entidad y ambas del periódo 2015 al 2021.",
                     style= {"font-size":22,})], 
            
         style= {"margin-left":"100px", "margin-right":"100px", "text-align":"justify"},
