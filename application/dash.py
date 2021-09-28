@@ -1,6 +1,6 @@
 # violencia familiar
 # se actualiza el mes (3 operaciones) y en la gráfica donde se señala "(hasta julio 2021)"
-violencia familiar
+#violencia familiar
 # se actualiza el mes (3 operaciones) y en la gráfica donde se señala "(hasta julio 2021)"
 import dash
 import matplotlib.pyplot as plt 
