@@ -1,5 +1,7 @@
 # violencia familiar
 # se actualiza el mes (3 operaciones) y en la gráfica donde se señala "(hasta julio 2021)"
+violencia familiar
+# se actualiza el mes (3 operaciones) y en la gráfica donde se señala "(hasta julio 2021)"
 import dash
 import matplotlib.pyplot as plt 
 import dash_bootstrap_components as dbc
@@ -103,7 +105,9 @@ fc = fb.merge(y18, on="Entidad",  how="inner")
 fd = fc.merge(y19, on="Entidad",  how="inner")
 fe = fd.merge(y20, on="Entidad",  how="inner")
 ff = fe.merge(y21, on="Entidad",  how="inner")
-                    
+
+
+#Primer mes que se actualiza
 femi15_21 = ff[[
  'Entidad','Enero15','Febrero15','Marzo15','Abril15','Mayo15','Junio15',
  'Julio15','Agosto15','Septiembre15','Octubre15','Noviembre15','Diciembre15',
@@ -124,7 +128,7 @@ femi15_21 = ff[[
  'Agosto20','Septiembre20','Octubre20','Noviembre20','Diciembre20',
     
  'Enero21','Febrero21','Marzo21','Abril21','Mayo21','Junio21','Julio21',
-# 'Agosto21','Septiembre21','Octubre21','Noviembre21','Diciembre21'
+ 'Agosto21',#'Septiembre21','Octubre21','Noviembre21','Diciembre21'
              ]]
 
 
@@ -151,7 +155,7 @@ femi15_21['Total2020']= femi15_21[[ 'Enero20', 'Febrero20', 'Marzo20', 'Abril20'
 
 femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21', 'Marzo21', 'Abril21', 'Mayo21',
                                    
-                                   'Junio21','Julio21',# 'Agosto21','Septiembre21','Octubre21',
+                                   'Junio21','Julio21', 'Agosto21',#'Septiembre21','Octubre21',
                                    #'Noviembre21','Diciembre21'
                                   ]].sum(axis=1)
 
@@ -186,7 +190,7 @@ pagra = ff[[
  'Enero20', 'Febrero20', 'Marzo20', 'Abril20', 'Mayo20', 'Junio20', 'Julio20', 'Agosto20',
     'Septiembre20','Octubre20', 'Noviembre20', 'Diciembre20',
 
- 'Enero21', 'Febrero21', 'Marzo21','Abril21', 'Mayo21', 'Junio21', 'Julio21', #'Agosto21',
+ 'Enero21', 'Febrero21', 'Marzo21','Abril21', 'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
   #  'Septiembre21','Octubre21','Noviembre21','Diciembre21'
             ]]
 
@@ -291,7 +295,7 @@ graf_tasafem.update_layout(
     #title='Tasa feminicidio periodo 2015-2020',
     xaxis_tickfont_size= 12,
     yaxis=dict(
-        title='Totales acumulados por entidad',
+        title='Tasa cada 100 000 habitantes',
         titlefont_size=14,
         tickfont_size=12,
         titlefont_family= "Monserrat"),
@@ -318,7 +322,7 @@ graf_totfem.update_layout(
     #title='Tasa feminicidio periodo 2015-2020',
     xaxis_tickfont_size= 12,
     yaxis=dict(
-        title='Tasa cada 100 000 habitantes',
+        title='Totales acumulados por entidad',
         titlefont_size=14,
         tickfont_size=12,
         titlefont_family= "Monserrat"),
@@ -526,7 +530,7 @@ body = html.Div([
                        dbc.Badge("mensuales", color="info", className="mr-1")]), 
                                        width={'size': 11,  "offset":1 })]),
        dbc.Row([        
-               dbc.Col(html.H5("(hasta julio 2021)"),
+               dbc.Col(html.H5("(hasta agosto 2021)"),
                                        width={ 'size': 3, "offset":1 }),
 
             ]),
