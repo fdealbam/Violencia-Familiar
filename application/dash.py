@@ -351,10 +351,21 @@ TOTTRATAPERSONAS = delitoso['Grand total'].sum()
 pobtot = junto15_21['Totpob1521'].sum()
 TASATRATAPERSONAS = round((TOTTRATAPERSONAS/pobtot)*100000,0)
 
-delCiu = delitoso[delitoso.Entidad == 'Ciudad de México']
-delMex = delitoso[delitoso.Entidad == 'Nuevo León']
-delChi = delitoso[delitoso.Entidad == 'Chihuahua']
-delPue = delitoso[delitoso.Entidad == 'Guanajuato']
+otrooso = delitoso.copy()
+otrooso.groupby(['Entidad'])['Grand total'].sum().to_csv('0agrup2.csv')
+enorden = pd.read_csv('0agrup2.csv')
+enorden2 = enorden.sort_values('Grand total', ascending=False, ignore_index=True)
+
+edoname1 = enorden2.iloc[0]['Entidad']
+edoname2 = enorden2.iloc[1]['Entidad']
+edoname3 = enorden2.iloc[2]['Entidad']
+edoname4 = enorden2.iloc[3]['Entidad']
+
+
+delCiu = delitoso[delitoso.Entidad == edoname1 ]
+delMex = delitoso[delitoso.Entidad == edoname2 ]
+delChi = delitoso[delitoso.Entidad == edoname3 ]
+delPue = delitoso[delitoso.Entidad == edoname4 ]
 
 
 delCiu2 = delCiu.sort_values('Grand total', ascending=False, ignore_index=True)
@@ -704,8 +715,8 @@ body = html.Div([
     
      dbc.Row(
            [
-               dbc.Col(dbc.Button(([html.P("Ciudad de México", style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx2.jpeg?raw=true",
+               dbc.Col(dbc.Button(([html.P(edoname1, style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Ciudad de México.png?raw=true",
                   style={'size': 2,}),
                           html.P(bulletedo1,
                      style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -716,8 +727,8 @@ body = html.Div([
                          
                          }, disabled=True)),
                
-               dbc.Col(dbc.Button(([html.P("Nuevo León", style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon2.jpeg?raw=true",
+               dbc.Col(dbc.Button(([html.P(edoname2, style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Nuevo León.png?raw=true",
                                     style={'size': 2,}),
                        html.P(bulletedo2,
                               style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -735,8 +746,8 @@ body = html.Div([
     html.Br(),
     
                 dbc.Row([
-          dbc.Col(dbc.Button(([html.P("Chihuahua", style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
+          dbc.Col(dbc.Button(([html.P(edoname3, style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Chihuahua.png?raw=true"),
     
                        html.P(bulletedo3,
                            style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -747,8 +758,8 @@ body = html.Div([
                          
                          }, disabled=True)),
                        
-               dbc.Col(dbc.Button(([html.P("Guanajuato", style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
+               dbc.Col(dbc.Button(([html.P(edoname4, style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa México.png?raw=true"),
                      html.Br(),
                                      html.Br(),
                                      html.Br(),
