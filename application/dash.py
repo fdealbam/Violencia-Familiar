@@ -1,4 +1,4 @@
-# Trata de personas
+# Violencia familiar
 
 import dash
 import matplotlib.pyplot as plt 
@@ -27,6 +27,7 @@ yea = datetime.strftime(yesterday, '%Y%m%d')
 today = date.today()
 d2 = today.strftime("Fecha de actualización : %d-%m-%Y")
 
+#esta tabla y codigo no tiene caso
 tabla1 = pd.read_csv('https://raw.githubusercontent.com/fdealbam/violenciadegenero/main/Tabla1.csv')              
 tabla1_f = tabla1[tabla1['Tipo de delito']== 'Violencia familiar' ]
 tabla1_f.reset_index(inplace=True,)
@@ -128,8 +129,8 @@ femi15_21 = fg[[
  'Enero21','Febrero21','Marzo21','Abril21','Mayo21','Junio21','Julio21',
  'Agosto21','Septiembre21','Octubre21','Noviembre21','Diciembre21',
     
- 'Enero22','Febrero22','Marzo22','Abril22','Mayo22','Junio22',#'Julio22',
- #'Agosto22','Septiembre22','Octubre22','Noviembre22','Diciembre22'
+ 'Enero22','Febrero22','Marzo22','Abril22','Mayo22','Junio22','Julio22',
+ 'Agosto22','Septiembre22','Octubre22','Noviembre22','Diciembre22'
              ]]
 
 
@@ -157,8 +158,8 @@ femi15_21['Total2021']= femi15_21[[ 'Enero21','Febrero21', 'Marzo21', 'Abril21',
                                    'Junio21','Julio21','Agosto21','Septiembre21','Octubre21',
                                    'Noviembre21','Diciembre21']].sum(axis=1)
 femi15_21['Total2022']= femi15_21[[ 'Enero22', 'Febrero22', 'Marzo22', 'Abril22', 'Mayo22',
-                               'Junio22',# 'Julio22', 'Agosto22', 'Septiembre22', 'Octubre22',
-                               #'Noviembre22', 'Diciembre22',
+                               'Junio22', 'Julio22', 'Agosto22', 'Septiembre22', 'Octubre22',
+                               'Noviembre22', 'Diciembre22',
                                   ]].sum(axis=1)
 
 #identificadores
@@ -194,8 +195,8 @@ pagra = fg[[
  'Enero21', 'Febrero21', 'Marzo21','Abril21', 'Mayo21', 'Junio21', 'Julio21', 'Agosto21',
    'Septiembre21','Octubre21','Noviembre21','Diciembre21',
     
- 'Enero22', 'Febrero22', 'Marzo22','Abril22', 'Mayo22', 'Junio22',# 'Julio22', 'Agosto22',
-   #'Septiembre22','Octubre22','Noviembre22','Diciembre22'
+ 'Enero22', 'Febrero22', 'Marzo22','Abril22', 'Mayo22', 'Junio22', 'Julio22', 'Agosto22',
+   'Septiembre22','Octubre22','Noviembre22','Diciembre22'
             ]]
 
 
@@ -272,7 +273,7 @@ fem_filter1['Total']=fem_filter1['Total'].astype(int)
 
 
 ######################################################### Graf. 2015-2021
-
+#burro
 junto1 = pd.read_csv('https://raw.githubusercontent.com/fdealbam/feminicidios/main/application/POB_15_21.csv')
 fem15_21 = femi15_21[['Entidad', 'Total2015', 'Total2016', 'Total2017',
        'Total2018', 'Total2019', 'Total2020', 'Total2021','Total2022']]
@@ -282,8 +283,8 @@ junto15_21["Entidad"].replace('Veracruz de Ignacio de la Llave','Veracruz' , inp
 #columna nueva 'Totfem1522' 
 #junto15_21['Totfem1522']=junto15_21[['Total2015', 'Total2016', 'Total2017','Total2018', 'Total2019', 'Total2020', 'Total2021','Total2022']].sum(1)
 junto15_21['Totfem1521']=junto15_21[[ 'Total2015', 'Total2016', 'Total2017','Total2018', 'Total2019', 'Total2020', 
-                                     'Total2021']].sum(1)
-junto15_21['Totpob1521']=junto15_21[['POB15', 'POB16', 'POB17', 'POB18','POB19', 'POB20', 'POB21']].sum(1)
+                                     'Total2021', 'Total2022']].sum(1)
+junto15_21['Totpob1521']=junto15_21[['POB15', 'POB16', 'POB17', 'POB18','POB19', 'POB20', 'POB21','POB22']].sum(1)
 junto15_21['Tasa1521']=((junto15_21.Totfem1521/junto15_21.Totpob1521)*100000).round(2)
 
 
@@ -351,21 +352,10 @@ TOTTRATAPERSONAS = delitoso['Grand total'].sum()
 pobtot = junto15_21['Totpob1521'].sum()
 TASATRATAPERSONAS = round((TOTTRATAPERSONAS/pobtot)*100000,0)
 
-otrooso = delitoso.copy()
-otrooso.groupby(['Entidad'])['Grand total'].sum().to_csv('0agrup2.csv')
-enorden = pd.read_csv('0agrup2.csv')
-enorden2 = enorden.sort_values('Grand total', ascending=False, ignore_index=True)
-
-edoname1 = enorden2.iloc[0]['Entidad']
-edoname2 = enorden2.iloc[1]['Entidad']
-edoname3 = enorden2.iloc[2]['Entidad']
-edoname4 = enorden2.iloc[3]['Entidad']
-
-
-delCiu = delitoso[delitoso.Entidad == edoname1 ]
-delMex = delitoso[delitoso.Entidad == edoname2 ]
-delChi = delitoso[delitoso.Entidad == edoname3 ]
-delPue = delitoso[delitoso.Entidad == edoname4 ]
+delCiu = delitoso[delitoso.Entidad == 'Ciudad de México']
+delMex = delitoso[delitoso.Entidad == 'Nuevo León']
+delChi = delitoso[delitoso.Entidad == 'Chihuahua']
+delPue = delitoso[delitoso.Entidad == 'Guanajuato']
 
 
 delCiu2 = delCiu.sort_values('Grand total', ascending=False, ignore_index=True)
@@ -539,7 +529,7 @@ body = html.Div([
                     "Este tablero analítico se compone de una sección en la cual tratamos la violencia familiar, observamos "
                     "su gravedad según intervalos anuales o mensuales; incluimos el análisis detallado de cuatro "
                     "entidades con más incidencias de este delito; finalmente, comparamos los rankings por entidad "
-                    "según sumas del periódo 2015 al 2021 con las tasas por entidad del mismo intervalo. " 
+                    "según sumas del periódo 2015 al 2022 con las tasas por entidad del mismo intervalo. " 
                     " "                    
                     "Hoy existen cada vez mayor atención institucional para atender la violencia contra las mujeres y son fuerte "
                     "preocupación de la sociedad, esto último se evidencia en el hecho que todos seamos más vigilantes al respecto. "
@@ -715,8 +705,8 @@ body = html.Div([
     
      dbc.Row(
            [
-               dbc.Col(dbc.Button(([html.P(edoname1, style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Ciudad de México.png?raw=true",
+               dbc.Col(dbc.Button(([html.P("Ciudad de México", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/cdmx2.jpeg?raw=true",
                   style={'size': 2,}),
                           html.P(bulletedo1,
                      style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -727,8 +717,8 @@ body = html.Div([
                          
                          }, disabled=True)),
                
-               dbc.Col(dbc.Button(([html.P(edoname2, style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Nuevo León.png?raw=true",
+               dbc.Col(dbc.Button(([html.P("Nuevo León", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/nvoleon2.jpeg?raw=true",
                                     style={'size': 2,}),
                        html.P(bulletedo2,
                               style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -746,8 +736,8 @@ body = html.Div([
     html.Br(),
     
                 dbc.Row([
-          dbc.Col(dbc.Button(([html.P(edoname3, style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa Chihuahua.png?raw=true"),
+          dbc.Col(dbc.Button(([html.P("Chihuahua", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/chi.jpeg?raw=true"),
     
                        html.P(bulletedo3,
                            style={'font-size': 14, "font-family":"Arial", "text-align":"justify" }),
@@ -758,8 +748,8 @@ body = html.Div([
                          
                          }, disabled=True)),
                        
-               dbc.Col(dbc.Button(([html.P(edoname4, style={"font-size": 30,"color": "black","background-color": "white"}),
-                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/Mapa México.png?raw=true"),
+               dbc.Col(dbc.Button(([html.P("Guanajuato", style={"font-size": 30,"color": "black","background-color": "white"}),
+                       dbc.CardImg(src="https://github.com/fdealbam/Violencia-Familiar/blob/main/application/static/gjto2.jpeg?raw=true"),
                      html.Br(),
                                      html.Br(),
                                      html.Br(),
